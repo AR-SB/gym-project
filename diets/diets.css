@@ -1,0 +1,252 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  scrollbar-width:thin;
+  scrollbar-color: #6D6E74 black;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+}
+body{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.background{
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  background: url("/images/background_wallpaper.jpg")no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+.header{
+  position: fixed;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding:13px;
+  display: flex;
+  gap: 600px;
+  text-overflow: hidden;
+  align-items: center;
+  z-index: 100;
+}
+.navbar a{
+  position: relative;
+  font-size: 16px;
+  color: white;
+  margin-right: 30px;
+  text-decoration: none;
+}
+.navbar a:hover{
+  color: gold;
+  transition: 0.5 ease;
+}
+.navbar a::after{
+  content:"" ;
+  position:absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: gold;
+  bottom: -5px;
+  border-radius: 5px;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+.navbar a:hover:after{
+  transform: translateY(0);
+  opacity: 1;
+ 
+}
+
+.search-bar{
+  width: 250px;
+  height: 35px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+}
+.search-bar input{
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  padding-left: 10px;
+}
+.search-bar button{
+  width: 40px;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.search-bar input::placeholder{
+  color: white;
+}
+.search-bar button ion-icon{
+  font-size: 22px;
+}
+.container{
+  position: absolute;
+  height: 100%;
+  width: 70%;
+  background-color:transparent;
+  margin-top: 15%;
+  display: grid;
+  grid-template-rows: repeat(7,1fr);
+  gap: 2%;
+  backdrop-filter: blur(3px);
+}
+.diet{
+  height: 150px;
+  width: 100%;
+  background-color: gray;
+  background: linear-gradient(to right,#86828200 , rgb(115, 116, 122),#86828200 );
+  background-color: rgb(115, 116, 122);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-rows: 90% 10% ;
+  gap: 2%;
+  border: 1px outset gold;
+  border-radius: 8px;
+  transition: all .7s ease-in;
+  float: none;
+  color: rgb(226, 226, 226);
+  line-height: 1.6;
+}
+.diet .description {
+  background: linear-gradient(to bottom , white, transparent);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.expand{
+  height: 400px;
+  width: 100%;
+  background: linear-gradient(to bottom ,#86828200 , rgb(115, 116, 122),#86828200 );
+  line-height: 1.6;
+  align-items: center;
+  justify-content: center;
+  grid-template-rows: 90% 10% ;
+  border-radius: 8px;
+  color: rgb(219, 219, 219);
+  overflow:visible;
+  transition: all .7s ease-in-out;
+}
+.images-expand{
+  height: 110px;
+    width : 90px;
+   border-radius: 100%;
+   float: left;
+   transition: all .7s ease-in;
+ 
+}
+.images{
+  height: 100%;
+  width: 150px;
+  float: left;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 1%;
+  border: none;
+  outline: none;
+  border-radius: 6%;  
+  transition: all .7s ease-in;
+  border-radius: 0;
+}
+.info{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.info-expand{
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+.up{
+  background: linear-gradient(to right,#86828200 , rgb(115, 116, 122),#86828200 );
+  display: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .7s ease-in;
+}
+.down{
+  background: linear-gradient(to right,#86828200 , rgb(115, 116, 122),#86828200 );
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .7s ease-in;
+}
+/* Set the style for the scrollbar */
+/* Note: these styles may not work in older browsers */
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #b91a1a;
+}
+::-moz-scrollbar-track {
+  background-color: #d11313;
+}
+::-ms-scrollbar-track {
+  background-color: #d60e0e;
+}
+::-o-scrollbar-track {
+  background-color: #a31818;
+}
+scrollbar-track {
+  background-color: #bd2323;
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #cc1a1a;
+}
+::-moz-scrollbar-thumb {
+  background-color: #ca2828;
+}
+::-ms-scrollbar-thumb {
+  background-color: #e61e1e;
+}
+::-o-scrollbar-thumb {
+  background-color: #c21f1f;
+}
+scrollbar-thumb {
+  background-color: #dd1d1d;
+}
+
+/* Thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #af1111;
+}
+::-moz-scrollbar-thumb:hover {
+  background-color: #961818;
+}
+::-ms-scrollbar-thumb:hover {
+  background-color: #8d0a0a;
+}
+::-o-scrollbar-thumb:hover {
+  background-color: #bd0a0a;
+}
+scrollbar-thumb:hover {
+  background-color: #8f1313;
+}

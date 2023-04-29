@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/calculators/calculator.css">
+  <script src="/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+             <!---------- NAVIGATOR ---------->
+  <header class="header">
+    <nav class="navbar">
+      <a href="#" id="burger">&#9776;</a>
+      <a href="#" id="exit"> &#10005;</a>
+      <a href="/Home/home.html">Home</a>
+      <a href="/calculators/calculator.html">Calculators</a>
+      <a href="/diets/diets.html">Diets</a>
+      <a href="/supplies/supplies.html">Supplies</a>
+    </nav>
+
+    </form>
+  </header>
+
+         <!---------- SIDEBAR ---------->
+
+  <div class="sidebar">
+    
+    <h2>Calculators</h2>
+    <div class="bmi"><a href=" #">BMI</a></div>
+    <div class="bmr"><a href=" #">BMR</a></div>
+  </div>
+      <div class="content">
+        <div class="container1">
+    
+          <div class="bmr-calculator">
+            <h2>BMR Calculator</h2>
+            <div class="controls">
+              <form action="">
+                <h3>Age</h3>
+                <input type="text"  id="age" />
+                <div class="gender">
+                <h3>Gender</h3>
+                <input type="radio" name="gender" id="male"  >
+                <label for="gender">Male</label>
+        
+                <input type="radio" name="gender"  id="female">
+                <label for="gender">Female</label>
+                </div>
+                <div class="height">
+                  <h3>Height</h3>
+                  <input type="text" id="height" required>
+                  <div class="unit">cm</div>
+                </div>
+                
+                <div class="weight">
+                  <h3>Weight</h3>
+                  <input type="text" id="weight" required>
+                  <div class="unit">kg</div>
+                </div>
+              </form>
+            </div>
+            <div class="action">
+              <button onclick="calBMR()" class="calculate-btn">
+                Calculate
+            </button>
+            </div>
+            <div class="result"><div class="result-message">
+              <span class="calories"> 1,640</span> <span class="desc"> Calories/Day</span>
+            </div>
+            
+          </div>
+          </div>
+          <div class="description">
+            <p>The basal metabolic rate (BMR) is the amount of energy needed while resting in a temperate environment when the digestive system is inactive. <br>
+               It is the equivalent of figuring out how much gas an idle car consumes while parked. <br>
+               In such a state, energy will be used only to maintain vital organs, which include the heart, brain, kidneys, nervous system, intestines, liver, lungs, sex organs, muscles, and skin. <br>
+               For most people, upwards of ~70% of total energy (calories) burned each day is due to upkeep. <br>
+               Physical activity makes up ~20% of expenditure and ~10% is used for the digestion of food, also known as thermogenesis. <br>
+               The BMR is measured under very restrictive circumstances while awake. An accurate BMR measurement requires that a person's sympathetic nervous system is inactive, which means the person must be completely rested. <br>
+               Basal metabolism is usually the largest component of a person's total caloric needs. The daily caloric need is the BMR value multiplied by a factor with a value between 1.2 and 1.9, depending on activity level.</p>
+          </div>
+        </div>
+        <div class="container2">
+          <div class="bmi-calculator">
+            <h2>BMI Calculator</h2>
+            <div class="controls">
+              <form action="">
+                <h3>Age</h3>
+                <input type="text"  id="age" required>
+                <div class="gender">
+                <h3>Gender</h3>
+                <input type="radio" name="gender" id="Male"  />
+                <label for="male">Male</label>
+        
+                <input type="radio" name="gender"  id="Female"/>
+                <label for="female">Female</label>
+                </div>
+                <div class="height">
+                  <h3>Height</h3>
+                  <input type="text" id="height" required>
+                  <div class="unit">cm</div>
+                </div>
+                
+                <div class="weight">
+                  <h3>Weight</h3>
+                  <input type="text" id="weight"required>
+                  <div class="unit">kg</div>
+                </div>
+              </form>
+            </div>
+            <div class="action">
+              <button onclick="calBMI()" class="calculate-btn">
+                Calculate
+            </button>
+            </div>
+            
+          </div>
+            <div class="result-bmi">
+              <div class="result-img">
+                <img src="/images/underweight.png" id="uw">
+                <img src="/images/normal.png" id="n">
+                <img src="/images/risk.png" id="r">
+                <img src="/images/overweight.png" id="ow">
+                <img src="/images/obese.png" id="o">
+              </div>
+              <div class="text-result">
+                <div class="bmi-result-message">  
+                </div>
+                <div id="text"></div>
+              </div>
+           
+          </div>
+          </div>
+       
+      </div>
+    
+  <script>
+   $("#burger").click(function(){
+        $(".sidebar").animate({left:"0"},1000);
+        $(".header").animate({left:"200px"},1000);
+        $("#burger").hide(700);
+        $("#exit").show(500);
+    });
+    $("#exit").click(function(){
+      $(".sidebar").animate({left:"-250px"},1000);
+      $(".header").animate({left:"0"},1000);
+      $("#burger").show(700);
+      $("#exit").hide(500);
+    });
+  
+   $(".bmi").click(function(){
+    $(".container1").animate({marginLeft:"120%"},1000);
+    $(".container2").animate({left:"2%"},1000);
+    $(".sidebar").animate({left: "-250px"});
+    $(".header").animate({left:"0"},600);
+    $("#burger").show(100);
+    $("#exit").hide(100);
+   });
+   $(".bmr").click(function(){
+    $(".container1").animate({marginLeft:"2%"},1000);
+    $(".container2").animate({left:"120%"},1000);
+    $(".header").animate({left:"0"},600);
+    $(".sidebar").animate({left: "-250px"});
+    $("#burger").show(100);
+    $("#exit").hide(100);
+   });
+
+   window.onload = function() {
+      $(".container1").animate({marginLeft:"120%"},0);
+      $(".container2").show(700);
+    }
+      //BMR calculator 
+   const calories = $(".bmr-calculator .result .calories");
+const calculateBtn = $(".bmr-calculator .action .calculate-btn");
+const age = $(".bmr-calculator form #age");
+const height = $(".bmr-calculator form #height");
+const weight = $(".bmr-calculator form #weight");
+
+//BMR = 10*weight +6.25*height -5*age +5(male)
+//BMR = 10*weight +6.25*height -5*age +161(female)
+
+const calculateBMR = (weight, height, age, gender) => {
+  if(gender){
+    return 10 * weight + 6.25 * height -5 * age + 5;
+  }
+    return 10 * weight + 6.25 * height -5 * age + 161;
+};
+calculateBtn.on("click", () =>{
+  let male = $("#male").prop("checked");
+  let BMR = calculateBMR(weight.val(), height.val(), age.val(), male);
+  calories.html(BMR);
+});
+
+const result = $(".container2 .result-bmi .bmi-result-message");
+const imageContainer = $(".container2 .result-bmi .bmi-result-image");
+const calculateBtn2 = $(".bmi-calculator .action .calculate-btn");
+const age2 = $(".bmi-calculator form #age");
+const height2 = $(".bmi-calculator form #height");
+const weight2 = $(".bmi-calculator form #weight");
+
+//BMI = weight/(height)^2(male & female)
+
+const calculateBMI = (weight2, height2) => {
+  return (weight2 / ((height2 * height2) / 10000)).toFixed(2);
+};
+
+calculateBtn2.on("click", () => {
+  let BMI = calculateBMI(weight2.val(), height2.val());
+  result.html(BMI);
+  
+  if (BMI < 18.5) {
+    $("#text").html("Your BMI indicates Your an underweight person");
+    $("#text").css("color","#60CCF3");
+    result.css("color","#60CCF3");
+     $("#r").hide(0);
+    $("#ow").hide(0);
+    $("#uw").show(100);
+    $("#n").hide(0);
+    $("#o").hide(0);
+  } else if (BMI >= 18.5 && BMI <= 22.9) {
+    $("#text").html("Your BMI indicates Your a Normal &Healthy person");
+    $("#text").css("color","#63BC46");
+    result.css("color","#63BC46");
+    $("#r").hide(0);
+    $("#ow").hide(0);
+    $("#uw").hide(0);
+    $("#n").show(100);
+    $("#o").hide(0);
+  } else if (BMI >= 23 && BMI <= 24.9) {
+    $("#text").html("Your BMI indicates Your in risk to be overweight person");
+    $("#text").css("color","#FBEC31");
+    result.css("color","#FBEC31");
+    $("#r").show(100);
+    $("#ow").hide(0);
+    $("#uw").hide(0);
+    $("#n").hide(0);
+    $("#o").hide(0);
+  } else if (BMI >= 25 && BMI <= 29.9) {
+    $("#text").html("Your BMI indicates Your an owerweight person");
+    $("#text").css("color","#F78F2C");
+    result.css("color","#F78F2C");
+    $("#ow").show(100);
+    $("#r").hide(0);
+    $("#uw").hide(0);
+    $("#n").hide(0);
+    $("#o").hide(0);
+  } else if (BMI >= 30) {
+    $("#text").html("Your BMI indicates Your an obese person");
+    $("#text").css("color","#EE3928");
+    result.css("color","#EE3928");
+    $("#o").show(100);
+    $("#ow").hide(0);
+    $("#uw").hide(0);
+    $("#n").hide(0);
+    $("#r").hide(0);
+  }
+  $(".bmi-result-message").css("display","block");
+});
+
+  </script>
+</body>
+</html>
